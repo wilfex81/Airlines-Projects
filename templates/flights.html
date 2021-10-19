@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en"  style="font-size: 16px;" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>FLIGHT LIST</title>
+
+<link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+	integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+	crossorigin="anonymous">
+	 <link id="u-theme-google-font" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,200i,300,300i,400,400i,600,600i,700,700i,900,900i|Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i">
+    <link id="u-page-google-font" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i|Source+Sans+Pro:200,200i,300,300i,400,400i,600,600i,700,700i,900,900i">
+    
+    
+    
+</head>
+<body>
+	<div>
+		
+		<div class="container my-2">
+			<h1>Flight List</h1>
+			<table border="1" class="table table-striped table-responsive-md">
+				<thead>
+					<tr>
+						<th><a>Flight Destination</a></th>
+						<th><a>Flight Departure Time</a></th>
+						<th><a>Flight Arrival Time</a></th>
+						<th><a>Actions</a></th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr th:each="flights : ${listFlights}">
+						<td th:text="${flights.destination}"></td>
+						<td th:text="${flights.departureTime}"></td>
+						<td th:text="${flights.arrivalTime}"></td>
+						<td><a th:href="@{/showBookingsForm}"
+							class="btn btn-primary btn-sm mb-3"> BOOK FLIGHT</a></td>
+				</tbody>
+			</table>
+		</div>
+	</div>
+	<hr>
+
+				<a th:href="@{/}" class="btn btn-primary btn-sm mb-3">Home Page</a>	
+</body>
+</html>

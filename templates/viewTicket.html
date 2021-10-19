@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en"  style="font-size: 16px;" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Airlines Reservation</title>
+<link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+<link rel="stylesheet" type="text/css"
+	th:href="@{/css/display_form.css}" />
+<link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+	integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+	crossorigin="anonymous">
+</head>
+<body>
+	<div  class="container my-2">
+		<h2>Customers Details</h2>
+		<table>
+			<tbody>
+				<tr>
+					<td><strong>First Name:</strong></td>
+					<td><span th:text="${customer.firstName}"></span></td>
+				</tr>
+				<tr>
+					<td><strong>Last Name:</strong></td>
+					<td><span th:text="${customer.lastName}"></span></td>
+				</tr>
+				<tr>
+					<td><strong>Destination:</strong></td>
+					<td><span th:text="${customer.destination}"></span></td>
+				</tr>
+
+				<tr>
+					<td><strong>Gender:</strong></td>
+					<td><span th:text="${customer.gender}"></span></td>
+				</tr>
+				<tr>
+					<td><strong>Booking Date:</strong></td>
+					<td><span th:text="${customer.bookingDate}"></span></td>
+				</tr>
+				<tr>
+					<td><strong>Traveling Date:</strong></td>
+					<td><span th:text="${customer.travelingDate}"></span></td>
+				</tr>
+			</tbody>
+		</table>
+		<hr>
+
+				<a th:href="@{/showFlights}" class="btn btn-primary btn-sm mb-3">Back Flight List </a>
+	<hr>
+
+				<a th:href="@{/}" class="btn btn-primary btn-sm mb-3">Home Page</a>
+	</div>
+</body>
+</html>
